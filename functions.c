@@ -190,13 +190,68 @@ void print_user_details(){print_details(person[entered_id-10]);}
 
 void add_routes(){
 
-FILE *ptr = fopen("route.txt","a");
+ while (getchar() != '\n');
+
+int route_id=(route_linescounter()) / 3;
 
 for(int i=0;i<40;i++){
 
-    
+if(route_id == i){
+
+FILE *ptr = fopen("route.txt","a");
+
+printf("\nEnter Route Origin : ");
+gets(rou[i].origin);
+
+//  getchar();
+ fprintf(ptr,"%s\n",rou[i].origin);
+
+printf("\nEnter Route Destination : ");
+gets(rou[i].destination);
+
+//  getchar();
+ fprintf(ptr,"%s\n",rou[i].destination);
+
+
+printf("\nEnter Fair You want to Set : ");
+scanf("%d",&rou[i].fair);
+
+ fprintf(ptr,"%d\n",rou[i].fair);
+
+fclose(ptr);
+
+break;
+
 }
 
+}
+
+
+
+}
+
+int route_linescounter(){
+
+FILE *ptr = fopen("route.txt", "r");
+   char ch;
+ int linescounter = 0;
+   
+   do
+   {
+
+      ch = fgetc(ptr);
+
+      if (ch == '\n' || ch == EOF)
+      {
+
+         linescounter++;
+      }
+
+   } while (ch != EOF);
+
+   fclose(ptr);
+
+   return linescounter;
 
 
 }

@@ -1,0 +1,9 @@
+rawalpindi
+abbott
+500
+rawalpindi
+lahore
+2000
+multan
+karachi
+7000

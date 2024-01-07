@@ -58,7 +58,7 @@ break;
 
 case 2:
  system("cls");
-
+add_routes();
 
 }
 
