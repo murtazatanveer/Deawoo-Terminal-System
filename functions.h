@@ -6,3 +6,5 @@ int count_lines();
 void print_user_details();
 int route_linescounter();
 void add_routes();
+void fetch_route_details();
+void print_available_routes();

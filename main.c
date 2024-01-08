@@ -31,7 +31,6 @@ if(c=='S'||c=='s'){
 
 signup();
 
-
 printf("\nPress 1 for login : ");
 scanf("%d",&a);
 getchar();
@@ -42,11 +41,12 @@ if(c=='l'||c=='L'||a==1){
 
 if (login())
 {
-    printf("\n_______Log In Successfully______");
+    printf("\n_______LogIn Successfully______");
 
 fetch_details_from_file();
+fetch_route_details();
 
-printf("\n\n1. View Your Account Details\n2. Add New Routes\n3. Update Fair\n\n Choice : ");
+printf("\n\n1. View Your Account Details.\n2. Check Available Routes.\n3. Add New Routes.\n\n Choice : ");
 scanf("%d",&a);
 
 switch(a){
@@ -56,9 +56,14 @@ switch(a){
 print_user_details();
 break;
 
-case 2:
+case 3:
  system("cls");
 add_routes();
+break;
+
+case 2:
+system("cls");
+print_available_routes();
 
 }
 

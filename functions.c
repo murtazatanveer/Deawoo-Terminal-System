@@ -14,13 +14,15 @@ struct details
 
 struct routes{
 
-char origin[20];
-char destination[20];
+char origin[30];
+char destination[30];
 int fair;
+char time[20];
 
 }rou[40];
 
 int entered_id;
+
   
 void fetch_details_from_file(){
 
@@ -122,10 +124,8 @@ entered_id=atoi(i_d);
 
    FILE *ptr = fopen("id,pass.txt", "r");
 
-while (1)
-        {
+while (!feof(ptr)){
           
-
             fgets(buffer, sizeof(buffer), ptr);
 
             if((strcmp(id_pass,buffer)) == 0){
@@ -136,11 +136,6 @@ while (1)
 
                return 1;
 
-            }
-
-            if (strlen(buffer) == 0)
-            {
-                break;
             }
 
             
@@ -192,31 +187,40 @@ void add_routes(){
 
  while (getchar() != '\n');
 
-int route_id=(route_linescounter()) / 3;
+int route_id=(route_linescounter())/4;
+
 
 for(int i=0;i<40;i++){
 
 if(route_id == i){
 
-FILE *ptr = fopen("route.txt","a");
+
 
 printf("\nEnter Route Origin : ");
 gets(rou[i].origin);
-
-//  getchar();
- fprintf(ptr,"%s\n",rou[i].origin);
-
+ 
 printf("\nEnter Route Destination : ");
 gets(rou[i].destination);
-
-//  getchar();
- fprintf(ptr,"%s\n",rou[i].destination);
+ 
 
 
 printf("\nEnter Fair You want to Set : ");
 scanf("%d",&rou[i].fair);
+getchar();
 
- fprintf(ptr,"%d\n",rou[i].fair);
+printf("\nEnter Time you Want to set : ");
+gets(rou[i].time);
+
+FILE *p = fopen("rou_details.txt","a");
+fprintf(p,"%s\n%s\n%d\n%s\n",rou[i].origin,rou[i].destination,rou[i].fair,rou[i].time);
+fclose(p);
+
+
+FILE *ptr = fopen("route.txt","a");
+
+fprintf(ptr,"Route ID : %d , Origin : %s , Destination : %s , Fair : %d , Time : %s\n",route_id+10,
+rou[i].origin,rou[i].destination,rou[i].fair,rou[i].time);
+
 
 fclose(ptr);
 
@@ -226,13 +230,17 @@ break;
 
 }
 
+system("cls");
 
+printf("\nRoute ID is : %d\n",route_id+10);
+
+return;
 
 }
 
 int route_linescounter(){
 
-FILE *ptr = fopen("route.txt", "r");
+FILE *ptr = fopen("rou_details.txt", "r");
    char ch;
  int linescounter = 0;
    
@@ -241,7 +249,7 @@ FILE *ptr = fopen("route.txt", "r");
 
       ch = fgetc(ptr);
 
-      if (ch == '\n' || ch == EOF)
+      if (ch == '\n')
       {
 
          linescounter++;
@@ -255,3 +263,63 @@ FILE *ptr = fopen("route.txt", "r");
 
 
 }
+
+
+void fetch_route_details(){
+
+
+FILE *ptr;
+ptr = fopen("rou_details.txt","r");
+
+if(ptr==NULL){printf("\nerrorin opening file\n");}
+
+// for(int i=0;i<(route_linescounter() / 4) ; i++){
+
+// fgets(rou[i].origin,sizeof(rou[i].origin),ptr);
+// // puts(rou[i].origin);
+
+// fgets(rou[i].destination,sizeof(rou[i].destination),ptr);
+// // puts(rou[i].destination);
+
+// fscanf(ptr,"%d",&rou[i].fair);
+// // printf("\n%d",rou[i].fair);
+
+// fgets(rou[i].time,sizeof(rou[i].time),ptr);
+// puts(rou[i].time);
+// }
+
+for (int i = 0; i < (route_linescounter() / 4); i++) {
+        
+        fgets(rou[i].origin, sizeof(rou[i].origin), ptr);
+        strtok(rou[i].origin, "\n"); 
+
+      
+        fgets(rou[i].destination, sizeof(rou[i].destination), ptr);
+        strtok(rou[i].destination, "\n");
+
+      
+        fscanf(ptr, "%d", &rou[i].fair);
+        fscanf(ptr, " "); 
+        fgets(rou[i].time, sizeof(rou[i].time), ptr);
+        strtok(rou[i].time, "\n"); 
+
+    }
+
+fclose(ptr);
+
+}
+
+void print_available_routes(){
+
+int route_id;
+printf("\nEnter Route ID: ");
+scanf("%d",&route_id);
+
+printf("\nOrigin      : %s",rou[route_id-10].origin);
+printf("\nDestination : %s",rou[route_id-10].destination);
+printf("\nFair        : %d",rou[route_id-10].fair);
+printf("\nTime        : %s",rou[route_id-10].time);
+
+
+}
+

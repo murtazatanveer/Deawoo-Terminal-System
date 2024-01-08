@@ -1,0 +1,12 @@
+Abbottabad
+Rawalpindi
+600
+08:00 AM
+Abbottabad
+Lahore
+2500
+10:00 AM
+Abbottabad
+Peshawar
+700
+12:00 PM

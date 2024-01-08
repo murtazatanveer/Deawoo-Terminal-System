@@ -1,9 +1,3 @@
-rawalpindi
-abbott
-500
-rawalpindi
-lahore
-2000
-multan
-karachi
-7000
+Route ID : 10 , Origin : Abbottabad , Destination : Rawalpindi , Fair : 600 , Time : 08:00 AM
+Route ID : 11 , Origin : Abbottabad , Destination : Lahore , Fair : 2500 , Time : 10:00 AM
+Route ID : 12 , Origin : Abbottabad , Destination : Peshawar , Fair : 700 , Time : 12:00 PM
