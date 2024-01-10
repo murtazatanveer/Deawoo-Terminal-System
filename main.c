@@ -14,6 +14,9 @@ getchar();
 
 system("cls");
 
+int a;
+// Admin code
+
 if(choice==1){
 
 printf("\nPress L for login or S for Signup\n");
@@ -23,7 +26,7 @@ printf("\nChoice : ");
 scanf("%c",&c);
 getchar();
 
-int a;
+
 
 system("cls");
 
@@ -64,7 +67,7 @@ break;
 case 2:
 system("cls");
 print_available_routes();
-
+break;
 }
 
 }
@@ -75,4 +78,69 @@ else{printf("\n_____Incorrect ID or Password_____");}
 
 }
 
+// customer code
+
+if(choice==2){
+
+printf("\nPress L for login or S for Signup\n");
+
+char c;
+printf("\nChoice : ");
+scanf("%c",&c);
+getchar();
+
+int a;
+
+system("cls");
+
+if(c=='S'||c=='s'){
+
+signup();
+
+printf("\nPress 1 for login : ");
+scanf("%d",&a);
+getchar();
+
 }
+
+if(c=='l'||c=='L'||a==1){
+
+if (login())
+{
+    printf("\n_______LogIn Successfully______");
+
+fetch_details_from_file();
+fetch_route_details();
+
+printf("\n\n1. View Your Account Details.\n2. Reserve Seat.\n\n Choice : ");
+scanf("%d",&a);
+
+switch(a){
+
+    case 1:
+    system("cls");
+   print_user_details();
+    break;
+
+case 2:
+ system("cls");
+reserve_seat();
+break;
+
+}
+
+}
+
+else{printf("\n_____Incorrect ID or Password_____");}
+
+
+}
+
+
+// end
+}
+
+}
+
+
+

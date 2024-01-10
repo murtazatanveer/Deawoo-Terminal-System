@@ -8,3 +8,5 @@ int route_linescounter();
 void add_routes();
 void fetch_route_details();
 void print_available_routes();
+void reserve_seat();
+void print_ticket();

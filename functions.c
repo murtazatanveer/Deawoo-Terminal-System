@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include<time.h>
 #include"functions.h"
 
 struct details
@@ -21,8 +22,18 @@ char time[20];
 
 }rou[40];
 
-int entered_id;
+struct seat{
 
+ char name[30];
+ char origin[30];
+char destination[30];
+int r_id;
+int seatno;
+
+}s;
+
+int entered_id;
+int route_id;
   
 void fetch_details_from_file(){
 
@@ -311,7 +322,7 @@ fclose(ptr);
 
 void print_available_routes(){
 
-int route_id;
+
 printf("\nEnter Route ID: ");
 scanf("%d",&route_id);
 
@@ -323,3 +334,73 @@ printf("\nTime        : %s",rou[route_id-10].time);
 
 }
 
+void reserve_seat(){
+
+ while (getchar() != '\n');
+
+int view_list;
+
+printf("\nPress 1 to view List : ");
+scanf("%d",&view_list);
+
+printf("\n");
+
+FILE *ptr = fopen("route.txt","r");
+
+char buffer[200];
+
+while(!feof(ptr)){
+
+fgets(buffer,sizeof(buffer),ptr);
+
+puts(buffer);
+
+}
+
+fclose(ptr);
+
+printf("\n\nEnter Route ID you want to Travel : ");
+scanf("%d",&s.r_id);
+
+int a=s.r_id;
+
+printf("\n\nYour Fair is : %d",rou[a-10].fair);
+
+ srand((unsigned int)time(NULL));
+
+    s.seatno = rand() % 33;
+
+strcpy(s.name,person[entered_id-10].name);
+strcpy(s.origin,rou[a-10].origin);
+strcpy(s.destination,rou[a-10].destination);
+
+int cho;
+printf("\n\nPress 1 to Pay or 0 to not : ");
+scanf("%d",&cho);
+
+system("cls");
+
+if(cho==1){
+
+   printf("\nFair Paid Now press 1 to Print Ticket : ");
+scanf("%d",&cho);
+system("cls");
+
+if(cho==1){system("cls");print_ticket();}
+
+}
+else if(cho==0){printf("\n\n\t____THANKS for Visiting Deawoo Terminal___");}
+
+}
+
+void print_ticket(){
+
+printf("\n\n____Your Ticket____\n\n");
+
+printf("Name        : %s",s.name);
+printf("Origin      : %s",s.origin);
+printf("\nDestination : %s",s.destination);
+printf("\nRoute ID    : %d",s.r_id);
+printf("\nSeat no     : %d\n",s.seatno);
+
+}
