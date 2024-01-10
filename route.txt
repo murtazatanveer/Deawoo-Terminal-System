@@ -1,3 +1,4 @@
 Route ID : 10 , Origin : Abbottabad , Destination : Rawalpindi , Fair : 600 , Time : 08:00 AM
 Route ID : 11 , Origin : Abbottabad , Destination : Lahore , Fair : 2500 , Time : 10:00 AM
 Route ID : 12 , Origin : Abbottabad , Destination : Peshawar , Fair : 700 , Time : 12:00 PM
+Route ID : 13 , Origin : Abbottabad , Destination : Jhelum , Fair : 1800 , Time : 03:00 PM

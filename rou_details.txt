@@ -10,3 +10,7 @@ Abbottabad
 Peshawar
 700
 12:00 PM
+Abbottabad
+Jhelum
+1800
+03:00 PM

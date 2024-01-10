@@ -243,7 +243,8 @@ break;
 
 system("cls");
 
-printf("\nRoute ID is : %d\n",route_id+10);
+printf("\n____Route Added____");
+printf("\n\nRoute ID is : %d\n",route_id+10);
 
 return;
 
@@ -340,10 +341,11 @@ void reserve_seat(){
 
 int view_list;
 
-printf("\nPress 1 to view List : ");
+printf("\nPress 1 to view Routes List : ");
 scanf("%d",&view_list);
 
 printf("\n");
+system("cls");
 
 FILE *ptr = fopen("route.txt","r");
 
