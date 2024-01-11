@@ -32,6 +32,8 @@ int seatno;
 
 }s;
 
+enum{false,true};
+
 int entered_id;
 int route_id;
   
@@ -145,7 +147,7 @@ while (!feof(ptr)){
 
             fclose(ptr);
 
-               return 1;
+               return true;
 
             }
 
@@ -153,7 +155,7 @@ while (!feof(ptr)){
         }
    
 
-   return 0;
+   return false;
 }
 
 
@@ -243,7 +245,7 @@ break;
 
 system("cls");
 
-printf("\n____Route Added____");
+printf("\n____Route Registered____");
 printf("\n\nRoute ID is : %d\n",route_id+10);
 
 return;
