@@ -285,7 +285,7 @@ void fetch_route_details(){
 FILE *ptr;
 ptr = fopen("rou_details.txt","r");
 
-if(ptr==NULL){printf("\nerrorin opening file\n");}
+if(ptr==NULL){printf("\nerror in opening file\n");}
 
 // for(int i=0;i<(route_linescounter() / 4) ; i++){
 

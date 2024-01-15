@@ -15,7 +15,7 @@ getchar();
 system("cls");
 
 int a;
-// Admin code
+// Admin code.................................
 
 if(choice==1){
 
@@ -42,9 +42,11 @@ getchar();
 
 if(c=='l'||c=='L'||a==1){
 
-if (login())
-{
+if (login()){
+
+    //   system("color 27");
     printf("\n_______LogIn Successfully______");
+// system("color");
 
 fetch_details_from_file();
 fetch_route_details();
@@ -78,7 +80,7 @@ else{printf("\n_____Incorrect ID or Password_____");}
 
 }
 
-// customer code
+// customer code...............................
 
 if(choice==2){
 
@@ -105,8 +107,8 @@ getchar();
 
 if(c=='l'||c=='L'||a==1){
 
-if (login())
-{
+if (login()){
+
     printf("\n_______LogIn Successfully______");
 
 fetch_details_from_file();
@@ -133,9 +135,7 @@ break;
 
 else{printf("\n_____Incorrect ID or Password_____");}
 
-
 }
-
 
 // end
 }
