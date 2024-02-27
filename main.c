@@ -5,10 +5,16 @@
 
 int main(){
 
-printf("\n\t\tWelcome to Deawoo Terminal\n\n");
+char  str_1[300] = "\n\t\tWelcome to Deawoo Terminal\n\n";
+
+printToConsole(str_1);
 
 int choice;
-printf("1. Admin\n2. Customer\n\n Choice : ");
+
+char  str_2[300] = "1. Admin\n2. Customer\n\n Choice : ";
+
+printToConsole(str_2);
+
 scanf("%d",&choice);
 getchar();
 
@@ -19,14 +25,18 @@ int a;
 
 if(choice==1){
 
-printf("\nPress L for login or S for Signup\n");
+char  str_3[300] = "\nPress L for login or S for Signup\n";
+
+printToConsole(str_3);
 
 char c;
-printf("\nChoice : ");
+
+char  str_4[300] = "\nChoice : ";
+
+printToConsole(str_4);
+
 scanf("%c",&c);
 getchar();
-
-
 
 system("cls");
 
@@ -34,7 +44,11 @@ if(c=='S'||c=='s'){
 
 signup();
 
-printf("\nPress 1 for login : ");
+
+char str_5[300] = "\nPress 1 for login : ";
+
+printToConsole(str_5);
+
 scanf("%d",&a);
 getchar();
 
@@ -44,14 +58,18 @@ if(c=='l'||c=='L'||a==1){
 
 if (login()){
 
-    //   system("color 27");
-    printf("\n_______LogIn Successfully______");
-// system("color");
+    char str_6[300] = "\n_______LogIn Successfully______";
+
+printToConsole(str_6);
 
 fetch_details_from_file();
 fetch_route_details();
 
-printf("\n\n1. View Your Account Details.\n2. Check Available Routes.\n3. Add New Routes.\n\n Choice : ");
+
+char str_7[2000] = "\n\n1. View Your Account Details.\n2. Check Available Routes.\n3. Add New Routes.\n\n Choice : ";
+
+printToConsole(str_7);
+
 scanf("%d",&a);
 
 switch(a){
@@ -74,7 +92,13 @@ break;
 
 }
 
-else{printf("\n_____Incorrect ID or Password_____");}
+else{
+
+char str_8[1500] = "\n_____Incorrect ID or Password_____";
+
+printToConsole(str_8);
+
+}
   
 }
 
@@ -84,7 +108,9 @@ else{printf("\n_____Incorrect ID or Password_____");}
 
 if(choice==2){
 
-printf("\nPress L for login or S for Signup\n");
+char  str_9[300] = "\nPress L for login or S for Signup\n";
+
+printToConsole(str_9);
 
 char c;
 printf("\nChoice : ");
@@ -99,7 +125,10 @@ if(c=='S'||c=='s'){
 
 signup();
 
-printf("\nPress 1 for login : ");
+char str_10[300] = "\nPress 1 for login : ";
+
+printToConsole(str_10);
+
 scanf("%d",&a);
 getchar();
 
@@ -109,12 +138,16 @@ if(c=='l'||c=='L'||a==1){
 
 if (login()){
 
-    printf("\n_______LogIn Successfully______");
+    char str_11[300] = "\n_______LogIn Successfully______";
+
+printToConsole(str_11);
 
 fetch_details_from_file();
 fetch_route_details();
 
-printf("\n\n1. View Your Account Details.\n2. Reserve Seat.\n\n Choice : ");
+char str_12[1500] = "\n\n1. View Your Account Details.\n2. Reserve Seat.\n\n Choice : ";
+printToConsole(str_12);
+
 scanf("%d",&a);
 
 switch(a){
@@ -133,7 +166,10 @@ break;
 
 }
 
-else{printf("\n_____Incorrect ID or Password_____");}
+else{
+    char str_8[1500] = "\n_____Incorrect ID or Password_____";
+
+printToConsole(str_8);}
 
 }
 

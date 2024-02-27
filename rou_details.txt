@@ -18,3 +18,7 @@ Abbottabad
 Mahensara
 120
 07:00 PM
+Haranpur
+Lahore
+1400
+05:20 AM

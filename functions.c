@@ -70,22 +70,25 @@ void signup()
       if ((id) == i)
       {
 
-         printf("\nEnter Your Name : ");
+         char str_1[1500] = "\nEnter Your Name : ";
+         printToConsole(str_1);
          gets(person[i].name);
 
-         printf("\nEnter Your Address : ");
+         char str_2[1500] = "\nEnter Your Address : ";
+         printToConsole(str_2);
          gets(person[i].address);
 
 
          
          
          while(1){
-printf("\nlength of Password must be 5 digits or characters");
-         printf("\nGenerate your password : ");
+
+      char str_3[1500] = "\nlength of Password must be 5 digits or characters\nGenerate your password : ";
+         printToConsole(str_3);
+
         gets(person[i].password);
 
   system("cls");
-
 
         if(strlen(person[i].password)==5){
 
@@ -106,9 +109,15 @@ printf("Password Length not meet");
       }
    }
 
+char str_4[1500] = "YOUR ID is : ";
+         printToConsole(str_4);
  
-   printf("YOUR ID is : %d\n", id+10);
-   printf("YOUR PASS is : %s\n", person[i].password);
+   printf("%d\n", id+10);
+
+   char str_5[150] = "YOUR PASS is : ";
+         printToConsole(str_5);
+
+   printf("%s\n", person[i].password);
 
    FILE *p = fopen("id,pass.txt", "a");
 
@@ -123,7 +132,10 @@ int login()
 {
 
    char id_pass[9];
-   printf("\nEnter your ID and PASS\n\nIn format (id,pass) : ");
+
+   char str_1[1500] = "\nEnter your ID and PASS\n\nIn format (id,pass) : ";
+         printToConsole(str_1);
+
    gets(id_pass);
 
 char i_d[3];
@@ -161,11 +173,21 @@ while (!feof(ptr)){
 
 void print_details(struct details per){
 
-   printf("\nName       : %s",per.name);
-printf("Address    : %s",per.address);
-printf("ID         : %d",entered_id);
-printf("\nPassword   : %s",per.password);
+char str_1[1500] = "\nName       : ";
+         printToConsole(str_1);
+         printf("%s",per.name);
 
+char str_2[1500] = "Address    : ";
+         printToConsole(str_2);
+         printf("%s",per.address);
+
+char str_3[1500] = "ID         : ";
+         printToConsole(str_3);
+         printf("%d",entered_id);
+
+char str_4[1500] = "\nPassword   : ";
+         printToConsole(str_4);  
+         printf("%s",per.password);
 
 }
 
@@ -207,27 +229,26 @@ for(int i=0;i<40;i++){
 
 if(route_id == i){
 
-
-
-printf("\nEnter Route Origin : ");
+char str_1[1500] = "\nEnter Route Origin : ";
+printToConsole(str_1);
 gets(rou[i].origin);
- 
-printf("\nEnter Route Destination : ");
+
+char str_2[1500] = "\nEnter Route Destination : ";
+printToConsole(str_2);
 gets(rou[i].destination);
  
-
-
-printf("\nEnter Fair You want to Set : ");
+char str_3[1500] = "\nEnter Fair You want to Set : ";
+printToConsole(str_3);
 scanf("%d",&rou[i].fair);
 getchar();
 
-printf("\nEnter Time you Want to set : ");
+char str_4[1500] = "\nEnter Time you Want to set : ";
+printToConsole(str_4);
 gets(rou[i].time);
 
 FILE *p = fopen("rou_details.txt","a");
 fprintf(p,"%s\n%s\n%d\n%s\n",rou[i].origin,rou[i].destination,rou[i].fair,rou[i].time);
 fclose(p);
-
 
 FILE *ptr = fopen("route.txt","a");
 
@@ -245,8 +266,12 @@ break;
 
 system("cls");
 
-printf("\n____Route Registered____");
-printf("\n\nRoute ID is : %d\n",route_id+10);
+char str_5[1500] = "\n____Route Registered____";
+printToConsole(str_5);
+
+char str_6[1500] = "\n\nRoute ID is : ";
+printToConsole(str_6);
+printf("%d\n",route_id+10);
 
 return;
 
@@ -325,14 +350,25 @@ fclose(ptr);
 
 void print_available_routes(){
 
-
-printf("\nEnter Route ID: ");
+char str_0[1500] = "\nEnter Route ID: ";
+printToConsole(str_0);
 scanf("%d",&route_id);
 
-printf("\nOrigin      : %s",rou[route_id-10].origin);
-printf("\nDestination : %s",rou[route_id-10].destination);
-printf("\nFair        : %d",rou[route_id-10].fair);
-printf("\nTime        : %s",rou[route_id-10].time);
+char str_1[1500] = "\nOrigin      : ";
+printToConsole(str_1);
+printf("%s",rou[route_id-10].origin);
+
+char str_2[1500] = "\nDestination : ";
+printToConsole(str_2);
+printf("%s",rou[route_id-10].destination);
+
+char str_3[1500] = "\nFair        : ";
+printToConsole(str_3);
+printf("%d",rou[route_id-10].fair);
+
+char str_4[1500] = "\nTime        : ";
+printToConsole(str_4);
+printf("%s",rou[route_id-10].time);
 
 
 }
@@ -406,5 +442,28 @@ printf("Origin      : %s",s.origin);
 printf("\nDestination : %s",s.destination);
 printf("\nRoute ID    : %d",s.r_id);
 printf("\nSeat no     : %d\n",s.seatno);
+
+}
+
+void itrations(){
+
+int j=0;
+for(unsigned long long int i = 0;i<=9999999+9999999;i++){
+
+j=i;
+
+}
+
+}
+
+
+void printToConsole(char *ptr){
+
+for(int i=0;i<strlen(ptr);i++){
+
+itrations();
+printf("%c",ptr[i]);
+
+}
 
 }

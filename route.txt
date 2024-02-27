@@ -3,3 +3,4 @@ Route ID : 11 , Origin : Abbottabad , Destination : Lahore , Fair : 2500 , Time 
 Route ID : 12 , Origin : Abbottabad , Destination : Peshawar , Fair : 700 , Time : 12:00 PM
 Route ID : 13 , Origin : Abbottabad , Destination : Jhelum , Fair : 1800 , Time : 03:00 PM
 Route ID : 14 , Origin : Abbottabad , Destination : Mahensara , Fair : 120 , Time : 07:00 PM
+Route ID : 15 , Origin : Haranpur , Destination : Lahore , Fair : 1400 , Time : 05:20 AM
